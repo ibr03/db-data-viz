@@ -3,21 +3,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV } = process.env;
+const { DATABASE_URI } = process.env;
 
-const sequelize = NODE_ENV === "production" ? new Sequelize({
-        dialect: "postgres",
-        host: DB_HOST,
-        port: 5342,
-        database: DB_NAME,
-        username: DB_USER,
-        password: DB_PASSWORD,
-    })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+const sequelize = new Sequelize(
+        DATABASE_URI,
         {
             dialect: 'postgres',
-    });
+        });
 
 const connectDB = async () => {
     try {
