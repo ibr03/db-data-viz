@@ -50,4 +50,4 @@ const loadData = async () => {
     }
 };
 
-export default loadData;
+loadData();
