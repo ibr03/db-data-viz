@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { parse } from 'csv-parse';
 import DataModel from '../models/dataModel.js';
-import { dirname } from 'path';
 
 const csvFilePath = './scripts/test_data.csv';
 
@@ -50,4 +49,4 @@ const loadData = async () => {
     }
 };
 
-loadData();
+export default loadData;
