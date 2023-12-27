@@ -32,7 +32,7 @@ const ChartComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/data-visualization');
+        const response = await axios.get('https://db-data-viz.onrender.com/api/data-visualization');
         const data = response.data;
 
         // Check if data is empty or undefined

@@ -21,7 +21,7 @@ const SearchBar = () => {
 
         // send request if non-empty input
         try {
-            const response = await axios.get(`http://localhost:4000/api/data?query=${searchInput}`);
+            const response = await axios.get(`https://db-data-viz.onrender.com/api/data?query=${searchInput}`);
             setResults(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
